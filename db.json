@@ -1,0 +1,1248 @@
+{
+    "reactQuests": [
+        {
+            "id": 0,
+            "vopros": "Что делает useState?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Компонент"
+                },
+                {
+                    "key": "b",
+                    "text": "Хук для состояния"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS свойство"
+                },
+                {
+                    "key": "d",
+                    "text": "Хук для эффекта"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 1,
+            "vopros": "Что делает useEffect?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт компонент"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт стейт"
+                },
+                {
+                    "key": "c",
+                    "text": "Вызывает побочные эффекты"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 2,
+            "vopros": "Что такое JSX?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS синтаксис"
+                },
+                {
+                    "key": "b",
+                    "text": "Функция React"
+                },
+                {
+                    "key": "c",
+                    "text": "JavaScript XML"
+                },
+                {
+                    "key": "d",
+                    "text": "HTML код"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 3,
+            "vopros": "Что такое props?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS стили"
+                },
+                {
+                    "key": "b",
+                    "text": "Параметры компонента"
+                },
+                {
+                    "key": "c",
+                    "text": "Метод жизненного цикла"
+                },
+                {
+                    "key": "d",
+                    "text": "Внутренний state компонента"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 4,
+            "vopros": "Что такое виртуальный DOM?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Хук React"
+                },
+                {
+                    "key": "b",
+                    "text": "Абстракция DOM для ускорения рендера"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS селектор"
+                },
+                {
+                    "key": "d",
+                    "text": "Настоящий DOM"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 5,
+            "vopros": "Что делает useContext?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Меняет DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Передаёт данные через компоненты"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт стейт"
+                },
+                {
+                    "key": "d",
+                    "text": "Вызывает эффект"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 6,
+            "vopros": "Что делает useRef?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Изменяет props"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт ссылку на DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Сохраняет state"
+                },
+                {
+                    "key": "d",
+                    "text": "Создаёт эффект"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 7,
+            "vopros": "Что такое React Hook?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "HTML тег"
+                },
+                {
+                    "key": "b",
+                    "text": "Метод массива"
+                },
+                {
+                    "key": "c",
+                    "text": "Функция для работы со state и эффектами"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS класс"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 8,
+            "vopros": "Что делает useMemo?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет компонент"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет state"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт эффект"
+                },
+                {
+                    "key": "d",
+                    "text": "Запоминает значение между рендерами"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 9,
+            "vopros": "Что делает useCallback?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт callback, который не пересоздаётся"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "Сохраняет state"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 10,
+            "vopros": "Что такое компонент-класс в React?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS класс"
+                },
+                {
+                    "key": "b",
+                    "text": "Компонент с жизненными циклами"
+                },
+                {
+                    "key": "c",
+                    "text": "HTML тег"
+                },
+                {
+                    "key": "d",
+                    "text": "Компонент на основе функции"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 11,
+            "vopros": "Что такое функциональный компонент?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "DOM элемент"
+                },
+                {
+                    "key": "b",
+                    "text": "Компонент как функция"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS компонент"
+                },
+                {
+                    "key": "d",
+                    "text": "Компонент как класс"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 12,
+            "vopros": "Что такое state?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS"
+                },
+                {
+                    "key": "b",
+                    "text": "Локальные данные компонента"
+                },
+                {
+                    "key": "c",
+                    "text": "DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "Параметры props"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 13,
+            "vopros": "Что делает useReducer?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Позволяет управлять state через reducer"
+                },
+                {
+                    "key": "c",
+                    "text": "Счётчик"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS стиль"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 14,
+            "vopros": "Что делает useImperativeHandle?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "b",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Позволяет управлять ref"
+                },
+                {
+                    "key": "d",
+                    "text": "Создаёт state"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 15,
+            "vopros": "Что такое key в списках React?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Хук"
+                },
+                {
+                    "key": "b",
+                    "text": "HTML атрибут"
+                },
+                {
+                    "key": "c",
+                    "text": "Идентификатор элемента для оптимизации рендера"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS селектор"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 16,
+            "vopros": "Что делает React.memo?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "b",
+                    "text": "Оптимизирует ререндер компонента"
+                },
+                {
+                    "key": "c",
+                    "text": "Удаляет компонент"
+                },
+                {
+                    "key": "d",
+                    "text": "Создаёт DOM"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 17,
+            "vopros": "Что делает useLayoutEffect?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Срабатывает синхронно после рендера"
+                },
+                {
+                    "key": "d",
+                    "text": "Асинхронно"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 18,
+            "vopros": "Что такое Portal в React?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Хук"
+                },
+                {
+                    "key": "b",
+                    "text": "Событие"
+                },
+                {
+                    "key": "c",
+                    "text": "Рендер элемента вне DOM иерархии"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS класс"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 19,
+            "vopros": "Что такое Context API?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Меняет state"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Позволяет передавать данные без props"
+                },
+                {
+                    "key": "d",
+                    "text": "Удаляет компонент"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 20,
+            "vopros": "Что такое React.Fragment?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS класс"
+                },
+                {
+                    "key": "b",
+                    "text": "Хук"
+                },
+                {
+                    "key": "c",
+                    "text": "Обёртка без лишнего DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "DOM элемент"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 21,
+            "vopros": "Что делает StrictMode?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "d",
+                    "text": "Помогает найти потенциальные ошибки"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 22,
+            "vopros": "Что такое Suspense?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS"
+                },
+                {
+                    "key": "b",
+                    "text": "Хук"
+                },
+                {
+                    "key": "c",
+                    "text": "Компонент для lazy загрузки"
+                },
+                {
+                    "key": "d",
+                    "text": "DOM"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 23,
+            "vopros": "Что делает lazy()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Синхронно рендерит"
+                },
+                {
+                    "key": "b",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "c",
+                    "text": "Позволяет загружать компонент лениво"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 24,
+            "vopros": "Что такое useDebugValue?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Выводит значение хука для DevTools"
+                },
+                {
+                    "key": "c",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS класс"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 25,
+            "vopros": "Что такое forwardRef?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт state"
+                },
+                {
+                    "key": "d",
+                    "text": "Позволяет передавать ref в дочерний компонент"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 26,
+            "vopros": "Что делает createContext?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт контекст"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "Создаёт state"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 27,
+            "vopros": "Что такое useTransition?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Позволяет откладывать ререндер"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 28,
+            "vopros": "Что делает useId?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт уникальный ID для элемента"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS класс"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет state"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 29,
+            "vopros": "Что делает useSyncExternalStore?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS класс"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "d",
+                    "text": "Подписка на внешний store"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        }
+    ],
+    "JavaScriptQuestions": [
+        {
+            "id": 0,
+            "vopros": "Что такое замыкание (closure)?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "DOM элемент"
+                },
+                {
+                    "key": "b",
+                    "text": "Объект"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "d",
+                    "text": "Функция с доступом к внешним переменным"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 1,
+            "vopros": "Что делает '===' в JavaScript?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт объект"
+                },
+                {
+                    "key": "b",
+                    "text": "Проверяет равенство и тип"
+                },
+                {
+                    "key": "c",
+                    "text": "Проверяет только значение"
+                },
+                {
+                    "key": "d",
+                    "text": "Вызывает функцию"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 2,
+            "vopros": "Что такое hoisting?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS свойство"
+                },
+                {
+                    "key": "b",
+                    "text": "Хук"
+                },
+                {
+                    "key": "c",
+                    "text": "Подъём деклараций функций и переменных"
+                },
+                {
+                    "key": "d",
+                    "text": "DOM рендер"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 3,
+            "vopros": "Что делает typeof?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет объект"
+                },
+                {
+                    "key": "b",
+                    "text": "Определяет тип переменной"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт переменную"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет DOM"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 4,
+            "vopros": "Что делает Array.map()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет элемент"
+                },
+                {
+                    "key": "b",
+                    "text": "Изменяет массив на месте"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт новый массив, вызывая функцию для каждого элемента"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS стиль"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 5,
+            "vopros": "Что делает Array.filter()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт копию массива"
+                },
+                {
+                    "key": "c",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "d",
+                    "text": "Фильтрует массив по условию"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 6,
+            "vopros": "Что делает Array.reduce()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "b",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Сводит массив к одному значению"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 7,
+            "vopros": "Что такое Promise?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Объект для асинхронной операции"
+                },
+                {
+                    "key": "b",
+                    "text": "CSS свойство"
+                },
+                {
+                    "key": "c",
+                    "text": "DOM элемент"
+                },
+                {
+                    "key": "d",
+                    "text": "Функция"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 8,
+            "vopros": "Что делает async/await?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт объект"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Позволяет писать асинхронный код как синхронный"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS стиль"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 9,
+            "vopros": "Что такое this в JS?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Переменная"
+                },
+                {
+                    "key": "b",
+                    "text": "CSS класс"
+                },
+                {
+                    "key": "c",
+                    "text": "Контекст вызова функции"
+                },
+                {
+                    "key": "d",
+                    "text": "DOM элемент"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 10,
+            "vopros": "Что делает bind()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Привязывает контекст функции"
+                },
+                {
+                    "key": "b",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 11,
+            "vopros": "Что делает call()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Вызывает функцию с указанным this"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS класс"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 12,
+            "vopros": "Что делает apply()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "Вызывает функцию с массивом аргументов"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 13,
+            "vopros": "Что делает Object.assign()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "b",
+                    "text": "Удаляет DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Копирует свойства объектов"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS класс"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 14,
+            "vopros": "Что делает JSON.stringify()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "c",
+                    "text": "Преобразует объект в строку JSON"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 15,
+            "vopros": "Что делает JSON.parse()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "Преобразует JSON в объект"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS класс"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 16,
+            "vopros": "Что такое event loop?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Цикл обработки событий в JS"
+                },
+                {
+                    "key": "b",
+                    "text": "CSS свойство"
+                },
+                {
+                    "key": "c",
+                    "text": "DOM элемент"
+                },
+                {
+                    "key": "d",
+                    "text": "Хук"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 17,
+            "vopros": "Что делает setTimeout()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "b",
+                    "text": "Выполняет функцию через задержку"
+                },
+                {
+                    "key": "c",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "d",
+                    "text": "Меняет props"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 18,
+            "vopros": "Что делает setInterval()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Создаёт DOM"
+                },
+                {
+                    "key": "b",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "d",
+                    "text": "Вызывает функцию через интервалы времени"
+                }
+            ],
+            "trueVariant": "d",
+            "score": 1
+        },
+        {
+            "id": 19,
+            "vopros": "Что делает clearTimeout()?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Меняет props"
+                },
+                {
+                    "key": "b",
+                    "text": "Отменяет таймер"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS стиль"
+                },
+                {
+                    "key": "d",
+                    "text": "Создаёт DOM"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "login": "alex123",
+            "password": "pass12345",
+            "name": "Alex",
+            "surname": "Johnson",
+            "points": 0
+        },
+        {
+            "id": 2,
+            "login": "maria_dev",
+            "password": "maria2024",
+            "name": "Maria",
+            "surname": "Sultanova",
+            "points": 0
+        },
+        {
+            "id": 3,
+            "login": "js_master",
+            "password": "jsrocks99",
+            "name": "Dmitry",
+            "surname": "Petrov",
+            "points": 0
+        },
+        {
+            "id": 4,
+            "login": "frontend_girl",
+            "password": "reactbest",
+            "name": "Amina",
+            "surname": "Karimova",
+            "points": 0
+        },
+        {
+            "id": 5,
+            "login": "coder_tim",
+            "password": "timsecure",
+            "name": "Timur",
+            "surname": "Abdullayev",
+            "points": 0
+        }
+    ]
+}
