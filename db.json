@@ -723,96 +723,339 @@
     ],
     "JavaScriptQuestions": [
         {
-            "id": 0,
-            "vopros": "Что такое замыкание (closure)?",
-            "variants": [
-                {
-                    "key": "a",
-                    "text": "DOM элемент"
-                },
-                {
-                    "key": "b",
-                    "text": "Объект"
-                },
-                {
-                    "key": "c",
-                    "text": "CSS стиль"
-                },
-                {
-                    "key": "d",
-                    "text": "Функция с доступом к внешним переменным"
-                }
-            ],
-            "trueVariant": "d",
-            "score": 1
-        },
-        {
             "id": 1,
-            "vopros": "Что делает '===' в JavaScript?",
+            "vopros": "HTML nima va nima uchun kerak?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Создаёт объект"
+                    "text": "Ma'lumotlar bazasini boshqarish tili"
                 },
                 {
                     "key": "b",
-                    "text": "Проверяет равенство и тип"
+                    "text": "Animatsiyalar uchun samaraliroq, brauzerga moslashgan"
                 },
                 {
                     "key": "c",
-                    "text": "Проверяет только значение"
+                    "text": "Ma'lumotlar bazasiga ulanish uchun"
                 },
                 {
                     "key": "d",
-                    "text": "Вызывает функцию"
+                    "text": "Fayllarni yuklash uchun"
                 }
             ],
             "trueVariant": "b",
             "score": 1
         },
         {
-            "id": 2,
-            "vopros": "Что такое hoisting?",
+            "id": 45,
+            "vopros": "localStorage va sessionStorage farqi?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "CSS свойство"
+                    "text": "localStorage vaqtinchalik, sessionStorage doimiy"
                 },
                 {
                     "key": "b",
-                    "text": "Хук"
+                    "text": "localStorage doimiy, sessionStorage sahifa yopilgunga qadar"
                 },
                 {
                     "key": "c",
-                    "text": "Подъём деклараций функций и переменных"
+                    "text": "Ikkisi ham bir xil"
                 },
                 {
                     "key": "d",
-                    "text": "DOM рендер"
+                    "text": "localStorage server, sessionStorage brauzer uchun"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 46,
+            "vopros": "Virtual DOM nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Real DOMning yengil nusxasi"
+                },
+                {
+                    "key": "b",
+                    "text": "Server tomonidagi DOM"
+                },
+                {
+                    "key": "c",
+                    "text": "Ma'lumotlar bazasi"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS freymvorki"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 47,
+            "vopros": "Reactda component turlari qaysilar?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Faqat Class Component"
+                },
+                {
+                    "key": "b",
+                    "text": "Functional va Class Component"
+                },
+                {
+                    "key": "c",
+                    "text": "Faqat Functional Component"
+                },
+                {
+                    "key": "d",
+                    "text": "Static va Dynamic Component"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 48,
+            "vopros": "React Hooks nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "CSS kutubxonasi"
+                },
+                {
+                    "key": "b",
+                    "text": "Functional componentda state va lifecycle ishlatish imkoniyati"
+                },
+                {
+                    "key": "c",
+                    "text": "Ma'lumotlar bazasi"
+                },
+                {
+                    "key": "d",
+                    "text": "Server API"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 49,
+            "vopros": "useState va useEffect farqi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "useState lifecycle, useEffect holat uchun"
+                },
+                {
+                    "key": "b",
+                    "text": "useState holat saqlaydi, useEffect yuklanganda ishga tushadi"
+                },
+                {
+                    "key": "c",
+                    "text": "Ikkisi ham bir xil"
+                },
+                {
+                    "key": "d",
+                    "text": "useState CSS, useEffect HTML uchun"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 50,
+            "vopros": "JSX nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Ma'lumotlar bazasi"
+                },
+                {
+                    "key": "b",
+                    "text": "Server protokoli"
+                },
+                {
+                    "key": "c",
+                    "text": "JavaScript XML, HTMLga o'xshash sintaksis"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS freymvorki"
                 }
             ],
             "trueVariant": "c",
             "score": 1
         },
         {
-            "id": 3,
-            "vopros": "Что делает typeof?",
+            "id": 51,
+            "vopros": "Reactning asosiy afzalliklari qaysilar?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Удаляет объект"
+                    "text": "Faqat tezkor ishlaydi"
                 },
                 {
                     "key": "b",
-                    "text": "Определяет тип переменной"
+                    "text": "Komponentli arxitektura, Virtual DOM, katta ekotizim"
                 },
                 {
                     "key": "c",
-                    "text": "Создаёт переменную"
+                    "text": "Faqat SEO uchun yaxshi"
                 },
                 {
                     "key": "d",
-                    "text": "Меняет DOM"
+                    "text": "Faqat mobil uchun"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 52,
+            "vopros": "Framework va Library farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Hech qanday farq yo'q"
+                },
+                {
+                    "key": "b",
+                    "text": "Library siz chaqirasiz, Framework siz uning qoidalari bilan ishlaysiz"
+                },
+                {
+                    "key": "c",
+                    "text": "Library backend, Framework frontend uchun"
+                },
+                {
+                    "key": "d",
+                    "text": "Framework eskirgan, Library yangi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 53,
+            "vopros": "filter() metodi nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Barcha elementlarni o'chiradi"
+                },
+                {
+                    "key": "b",
+                    "text": "Shartga mos elementlarni qaytaradi"
+                },
+                {
+                    "key": "c",
+                    "text": "Elementlarni saralaydi"
+                },
+                {
+                    "key": "d",
+                    "text": "Birinchi elementni topadi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 54,
+            "vopros": "reduce() metodi nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Array uzunligini kamaytiradi"
+                },
+                {
+                    "key": "b",
+                    "text": "Barcha elementlardan bitta qiymat hosil qiladi"
+                },
+                {
+                    "key": "c",
+                    "text": "Elementlarni o'chiradi"
+                },
+                {
+                    "key": "d",
+                    "text": "Yangi array yaratadi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 55,
+            "vopros": "Event capturing nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Hodisa ichkaridan tashqariga"
+                },
+                {
+                    "key": "b",
+                    "text": "Hodisa tashqaridan ichkariga"
+                },
+                {
+                    "key": "c",
+                    "text": "Hodisani to'xtatish"
+                },
+                {
+                    "key": "d",
+                    "text": "Hodisani nusxalash"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        }
+    ],
+    
+    "JavaScriptQuestions": [
+        {
+            "id": 2,
+            "vopros": "img va a taglari farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "img video qo'yadi, a esa audio"
+                },
+                {
+                    "key": "b",
+                    "text": "img rasm qo'yadi, a esa hyperlink yaratadi"
+                },
+                {
+                    "key": "c",
+                    "text": "img matn yozadi, a esa rasm chizadi"
+                },
+                {
+                    "key": "d",
+                    "text": "Ikkisi ham bir xil vazifani bajaradi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 3,
+            "vopros": "form elementi nima uchun ishlatiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Rasmlarni yuklash uchun"
+                },
+                {
+                    "key": "b",
+                    "text": "Foydalanuvchi ma'lumotlarini serverga yuborish uchun"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS stillarini qo'shish uchun"
+                },
+                {
+                    "key": "d",
+                    "text": "JavaScript kodini yozish uchun"
                 }
             ],
             "trueVariant": "b",
@@ -820,23 +1063,23 @@
         },
         {
             "id": 4,
-            "vopros": "Что делает Array.map()?",
+            "vopros": "HTMLda table qanday tuziladi?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Удаляет элемент"
+                    "text": "div, span, p taglari bilan"
                 },
                 {
                     "key": "b",
-                    "text": "Изменяет массив на месте"
+                    "text": "form, input, button taglari bilan"
                 },
                 {
                     "key": "c",
-                    "text": "Создаёт новый массив, вызывая функцию для каждого элемента"
+                    "text": "table, tr, td, th taglari bilan"
                 },
                 {
                     "key": "d",
-                    "text": "CSS стиль"
+                    "text": "ul, ol, li taglari bilan"
                 }
             ],
             "trueVariant": "c",
@@ -844,95 +1087,95 @@
         },
         {
             "id": 5,
-            "vopros": "Что делает Array.filter()?",
+            "vopros": "Qaysi input type parol kiritish uchun ishlatiladi?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Удаляет DOM"
+                    "text": "text"
                 },
                 {
                     "key": "b",
-                    "text": "Создаёт копию массива"
+                    "text": "hidden"
                 },
                 {
                     "key": "c",
-                    "text": "Меняет props"
+                    "text": "password"
                 },
                 {
                     "key": "d",
-                    "text": "Фильтрует массив по условию"
-                }
-            ],
-            "trueVariant": "d",
-            "score": 1
-        },
-        {
-            "id": 6,
-            "vopros": "Что делает Array.reduce()?",
-            "variants": [
-                {
-                    "key": "a",
-                    "text": "CSS стиль"
-                },
-                {
-                    "key": "b",
-                    "text": "Создаёт DOM"
-                },
-                {
-                    "key": "c",
-                    "text": "Сводит массив к одному значению"
-                },
-                {
-                    "key": "d",
-                    "text": "Меняет props"
+                    "text": "secure"
                 }
             ],
             "trueVariant": "c",
             "score": 1
         },
         {
-            "id": 7,
-            "vopros": "Что такое Promise?",
+            "id": 6,
+            "vopros": "Semantic taglar nima uchun kerak?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Объект для асинхронной операции"
+                    "text": "Faqat dizaynni chiroyli qilish uchun"
                 },
                 {
                     "key": "b",
-                    "text": "CSS свойство"
+                    "text": "Sahifa tuzilmasini aniq ifodalash, SEO va accessibility uchun"
                 },
                 {
                     "key": "c",
-                    "text": "DOM элемент"
+                    "text": "Serverga ma'lumot yuborish uchun"
                 },
                 {
                     "key": "d",
-                    "text": "Функция"
+                    "text": "JavaScript funksiyalarini chaqirish uchun"
                 }
             ],
-            "trueVariant": "a",
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 7,
+            "vopros": "ul va ol farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "ul raqamlangan, ol belgili ro'yxat"
+                },
+                {
+                    "key": "b",
+                    "text": "ul belgili ro'yxat, ol raqamlangan ro'yxat"
+                },
+                {
+                    "key": "c",
+                    "text": "Ikkisi ham faqat rasmlar uchun"
+                },
+                {
+                    "key": "d",
+                    "text": "ul forma, ol jadval yaratadi"
+                }
+            ],
+            "trueVariant": "b",
             "score": 1
         },
         {
             "id": 8,
-            "vopros": "Что делает async/await?",
+            "vopros": "CSSni HTMLga ulashning nechta usuli bor?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Создаёт объект"
+                    "text": "2 ta: inline va internal"
                 },
                 {
                     "key": "b",
-                    "text": "Меняет DOM"
+                    "text": "5 ta: inline, external, internal, embedded, linked"
                 },
                 {
                     "key": "c",
-                    "text": "Позволяет писать асинхронный код как синхронный"
+                    "text": "3 ta: inline, internal, external"
                 },
                 {
                     "key": "d",
-                    "text": "CSS стиль"
+                    "text": "Faqat 1 ta: external"
                 }
             ],
             "trueVariant": "c",
@@ -940,71 +1183,71 @@
         },
         {
             "id": 9,
-            "vopros": "Что такое this в JS?",
+            "vopros": "CSS Box Model qaysi qismlardan iborat?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Переменная"
+                    "text": "Content, Header, Footer, Sidebar"
                 },
                 {
                     "key": "b",
-                    "text": "CSS класс"
+                    "text": "Content, Padding, Border, Margin"
                 },
                 {
                     "key": "c",
-                    "text": "Контекст вызова функции"
+                    "text": "Width, Height, Color, Font"
                 },
                 {
                     "key": "d",
-                    "text": "DOM элемент"
+                    "text": "Top, Bottom, Left, Right"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 10,
+            "vopros": "Flexbox qanday faollashtiriladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "display: block"
+                },
+                {
+                    "key": "b",
+                    "text": "position: flex"
+                },
+                {
+                    "key": "c",
+                    "text": "display: flex"
+                },
+                {
+                    "key": "d",
+                    "text": "layout: flexbox"
                 }
             ],
             "trueVariant": "c",
             "score": 1
         },
         {
-            "id": 10,
-            "vopros": "Что делает bind()?",
-            "variants": [
-                {
-                    "key": "a",
-                    "text": "Привязывает контекст функции"
-                },
-                {
-                    "key": "b",
-                    "text": "CSS стиль"
-                },
-                {
-                    "key": "c",
-                    "text": "Создаёт DOM"
-                },
-                {
-                    "key": "d",
-                    "text": "Меняет props"
-                }
-            ],
-            "trueVariant": "a",
-            "score": 1
-        },
-        {
             "id": 11,
-            "vopros": "Что делает call()?",
+            "vopros": "position: absolute va relative farqi nima?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Создаёт DOM"
+                    "text": "absolute o'z joyiga nisbatan, relative ota elementga nisbatan"
                 },
                 {
                     "key": "b",
-                    "text": "Меняет props"
+                    "text": "Ikkisi ham bir xil"
                 },
                 {
                     "key": "c",
-                    "text": "Вызывает функцию с указанным this"
+                    "text": "relative o'z joyiga nisbatan, absolute ota elementga nisbatan"
                 },
                 {
                     "key": "d",
-                    "text": "CSS класс"
+                    "text": "absolute flexbox, relative grid uchun"
                 }
             ],
             "trueVariant": "c",
@@ -1012,95 +1255,95 @@
         },
         {
             "id": 12,
-            "vopros": "Что делает apply()?",
+            "vopros": "Media query nima uchun ishlatiladi?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "CSS стиль"
+                    "text": "Video va audio fayllarni qo'shish uchun"
                 },
                 {
                     "key": "b",
-                    "text": "Меняет props"
+                    "text": "Turli qurilmalarda sahifani moslashtirish uchun"
                 },
                 {
                     "key": "c",
-                    "text": "Создаёт DOM"
+                    "text": "Ma'lumotlar bazasiga ulanish uchun"
                 },
                 {
                     "key": "d",
-                    "text": "Вызывает функцию с массивом аргументов"
+                    "text": "JavaScript kodini yozish uchun"
                 }
             ],
-            "trueVariant": "d",
+            "trueVariant": "b",
             "score": 1
         },
         {
             "id": 13,
-            "vopros": "Что делает Object.assign()?",
+            "vopros": "hover va focus farqi nima?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Меняет props"
+                    "text": "hover bosishda, focus ustiga olib borishda"
                 },
                 {
                     "key": "b",
-                    "text": "Удаляет DOM"
+                    "text": "hover ustiga olib borishda, focus kursor tushganda"
                 },
                 {
                     "key": "c",
-                    "text": "Копирует свойства объектов"
+                    "text": "Ikkisi ham faqat inputlar uchun"
                 },
                 {
                     "key": "d",
-                    "text": "CSS класс"
+                    "text": "hover CSS, focus HTML atributi"
                 }
             ],
-            "trueVariant": "c",
+            "trueVariant": "b",
             "score": 1
         },
         {
             "id": 14,
-            "vopros": "Что делает JSON.stringify()?",
+            "vopros": "z-index nima qiladi?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Создаёт DOM"
+                    "text": "Element kengligi"
                 },
                 {
                     "key": "b",
-                    "text": "CSS стиль"
+                    "text": "Elementlarning ustma-ust joylashuv tartibini belgilaydi"
                 },
                 {
                     "key": "c",
-                    "text": "Преобразует объект в строку JSON"
+                    "text": "Element rangini o'zgartiradi"
                 },
                 {
                     "key": "d",
-                    "text": "Меняет props"
+                    "text": "Animatsiya tezligi"
                 }
             ],
-            "trueVariant": "c",
+            "trueVariant": "b",
             "score": 1
         },
         {
             "id": 15,
-            "vopros": "Что делает JSON.parse()?",
+            "vopros": "transform: scale() nima qiladi?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Создаёт DOM"
+                    "text": "Elementni gorizontal siljitadi"
                 },
                 {
                     "key": "b",
-                    "text": "Меняет props"
+                    "text": "Elementni vertikal siljitadi"
                 },
                 {
                     "key": "c",
-                    "text": "Преобразует JSON в объект"
+                    "text": "Elementni kattalashtiradi yoki kichraytiradi"
                 },
                 {
                     "key": "d",
-                    "text": "CSS класс"
+                    "text": "Elementni aylantiradi"
                 }
             ],
             "trueVariant": "c",
@@ -1108,95 +1351,671 @@
         },
         {
             "id": 16,
-            "vopros": "Что такое event loop?",
+            "vopros": "JavaScript nima?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Цикл обработки событий в JS"
+                    "text": "Ma'lumotlar bazasi boshqaruv tizimi"
                 },
                 {
                     "key": "b",
-                    "text": "CSS свойство"
+                    "text": "Sahifaga dinamiklik qo'shish uchun dasturlash tili"
                 },
                 {
                     "key": "c",
-                    "text": "DOM элемент"
+                    "text": "Dizayn yaratish dasturi"
                 },
                 {
                     "key": "d",
-                    "text": "Хук"
-                }
-            ],
-            "trueVariant": "a",
-            "score": 1
-        },
-        {
-            "id": 17,
-            "vopros": "Что делает setTimeout()?",
-            "variants": [
-                {
-                    "key": "a",
-                    "text": "CSS стиль"
-                },
-                {
-                    "key": "b",
-                    "text": "Выполняет функцию через задержку"
-                },
-                {
-                    "key": "c",
-                    "text": "Создаёт DOM"
-                },
-                {
-                    "key": "d",
-                    "text": "Меняет props"
+                    "text": "Server operatsion tizimi"
                 }
             ],
             "trueVariant": "b",
             "score": 1
         },
         {
-            "id": 18,
-            "vopros": "Что делает setInterval()?",
+            "id": 17,
+            "vopros": "let, const, var farqi nima?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Создаёт DOM"
+                    "text": "Barchasi bir xil"
                 },
                 {
                     "key": "b",
-                    "text": "Меняет props"
+                    "text": "let o'zgarmas, const o'zgaradi, var blok doirasi"
                 },
                 {
                     "key": "c",
-                    "text": "CSS стиль"
+                    "text": "let blok doirasi, const o'zgarmas, var funksiya doirasi"
                 },
                 {
                     "key": "d",
-                    "text": "Вызывает функцию через интервалы времени"
+                    "text": "Faqat var ishlatiladi, qolganlari eskirgan"
                 }
             ],
-            "trueVariant": "d",
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 18,
+            "vopros": "typeof operatori nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "O'zgaruvchi nomini o'zgartiradi"
+                },
+                {
+                    "key": "b",
+                    "text": "O'zgaruvchi turini aniqlaydi"
+                },
+                {
+                    "key": "c",
+                    "text": "O'zgaruvchini o'chiradi"
+                },
+                {
+                    "key": "d",
+                    "text": "Yangi o'zgaruvchi yaratadi"
+                }
+            ],
+            "trueVariant": "b",
             "score": 1
         },
         {
             "id": 19,
-            "vopros": "Что делает clearTimeout()?",
+            "vopros": "== va === farqi nima?",
             "variants": [
                 {
                     "key": "a",
-                    "text": "Меняет props"
+                    "text": "== tur ham tekshiradi, === faqat qiymat"
                 },
                 {
                     "key": "b",
-                    "text": "Отменяет таймер"
+                    "text": "Ikkisi ham bir xil"
                 },
                 {
                     "key": "c",
-                    "text": "CSS стиль"
+                    "text": "== faqat qiymat, === qiymat va turni ham tekshiradi"
                 },
                 {
                     "key": "d",
-                    "text": "Создаёт DOM"
+                    "text": "== qo'shish, === ayirish operatori"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 20,
+            "vopros": "Qaysi method stringni katta harflarga o'zgartiradi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "toLowerCase()"
+                },
+                {
+                    "key": "b",
+                    "text": "toUpperCase()"
+                },
+                {
+                    "key": "c",
+                    "text": "capitalize()"
+                },
+                {
+                    "key": "d",
+                    "text": "uppercase()"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 21,
+            "vopros": "Object va Array farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Object tartiblangan, Array tartibsiz"
+                },
+                {
+                    "key": "b",
+                    "text": "Object kalit-qiymat, Array tartiblangan qiymatlar"
+                },
+                {
+                    "key": "c",
+                    "text": "Ikkisi ham bir xil"
+                },
+                {
+                    "key": "d",
+                    "text": "Object faqat raqamlar, Array faqat matnlar uchun"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 22,
+            "vopros": "forEach() metodi nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Array elementlarini o'chiradi"
+                },
+                {
+                    "key": "b",
+                    "text": "Array ustida funksiya bajaradi"
+                },
+                {
+                    "key": "c",
+                    "text": "Yangi array yaratadi"
+                },
+                {
+                    "key": "d",
+                    "text": "Array uzunligini qaytaradi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 23,
+            "vopros": "DOM nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Ma'lumotlar bazasi"
+                },
+                {
+                    "key": "b",
+                    "text": "HTML elementlarini JavaScript orqali boshqarish tizimi"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS freymvorki"
+                },
+                {
+                    "key": "d",
+                    "text": "Server protokoli"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 24,
+            "vopros": "addEventListener() nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Yangi element yaratadi"
+                },
+                {
+                    "key": "b",
+                    "text": "Elementga hodisa qo'shadi"
+                },
+                {
+                    "key": "c",
+                    "text": "Elementni o'chiradi"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS stilini o'zgartiradi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 25,
+            "vopros": "Arrow function va function declaration farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Hech qanday farq yo'q"
+                },
+                {
+                    "key": "b",
+                    "text": "Arrow function tezroq ishlaydi"
+                },
+                {
+                    "key": "c",
+                    "text": "Arrow function 'this' qiymatini meros olmaydi"
+                },
+                {
+                    "key": "d",
+                    "text": "Function declaration eskirgan"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 26,
+            "vopros": "setTimeout va setInterval farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "setTimeout 1 marta, setInterval takrorlanadi"
+                },
+                {
+                    "key": "b",
+                    "text": "Ikkisi ham bir xil"
+                },
+                {
+                    "key": "c",
+                    "text": "setTimeout takrorlanadi, setInterval 1 marta"
+                },
+                {
+                    "key": "d",
+                    "text": "setTimeout CSS, setInterval HTML uchun"
+                }
+            ],
+            "trueVariant": "a",
+            "score": 1
+        },
+        {
+            "id": 27,
+            "vopros": "map() metodi nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Elementlarni o'chiradi"
+                },
+                {
+                    "key": "b",
+                    "text": "Yangi massiv yaratadi"
+                },
+                {
+                    "key": "c",
+                    "text": "Elementlarni saralaydi"
+                },
+                {
+                    "key": "d",
+                    "text": "Birinchi elementni qaytaradi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 28,
+            "vopros": "localStorage nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Server xotirasi"
+                },
+                {
+                    "key": "b",
+                    "text": "Brauzerda ma'lumotlarni saqlash API"
+                },
+                {
+                    "key": "c",
+                    "text": "Ma'lumotlar bazasi"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS xususiyati"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 29,
+            "vopros": "fetch() nima qiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "DOM yaratadi"
+                },
+                {
+                    "key": "b",
+                    "text": "Tashqi API yoki fayldan ma'lumot oladi"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS stilini o'zgartiradi"
+                },
+                {
+                    "key": "d",
+                    "text": "Element joylashuvini topadi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 30,
+            "vopros": "async/await nima uchun ishlatiladi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Sinxron kodni yozish uchun"
+                },
+                {
+                    "key": "b",
+                    "text": "Asinxron kodni soddalashtirish uchun"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS animatsiyasi uchun"
+                },
+                {
+                    "key": "d",
+                    "text": "HTML yaratish uchun"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 31,
+            "vopros": "JSON nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "JavaScript kutubxonasi"
+                },
+                {
+                    "key": "b",
+                    "text": "Ma'lumot almashish formati"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS freymvorki"
+                },
+                {
+                    "key": "d",
+                    "text": "HTML tagi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 32,
+            "vopros": "Scope turlari qaysilar?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Faqat global va local"
+                },
+                {
+                    "key": "b",
+                    "text": "Global, function, block scope"
+                },
+                {
+                    "key": "c",
+                    "text": "Public va private"
+                },
+                {
+                    "key": "d",
+                    "text": "Internal va external"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 33,
+            "vopros": "Function declaration va function expression farqi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Expression hoisting bo'yicha yuqoriga ko'tariladi"
+                },
+                {
+                    "key": "b",
+                    "text": "Declaration hoisting bo'yicha yuqoriga ko'tariladi"
+                },
+                {
+                    "key": "c",
+                    "text": "Hech qanday farq yo'q"
+                },
+                {
+                    "key": "d",
+                    "text": "Expression tezroq ishlaydi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 34,
+            "vopros": "Hoisting nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "O'zgaruvchilarni pastga tushirish"
+                },
+                {
+                    "key": "b",
+                    "text": "Funksiyalarni o'chirish"
+                },
+                {
+                    "key": "c",
+                    "text": "O'zgaruvchi va funksiyalarni faylning yuqorisiga ko'tarish"
+                },
+                {
+                    "key": "d",
+                    "text": "Kodni optimallashtirish"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 35,
+            "vopros": "Primitive va Reference types farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Primitive murakkab, Reference oddiy"
+                },
+                {
+                    "key": "b",
+                    "text": "Primitive oddiy qiymatlar, Reference manzil orqali"
+                },
+                {
+                    "key": "c",
+                    "text": "Hech qanday farq yo'q"
+                },
+                {
+                    "key": "d",
+                    "text": "Primitive tezroq ishlaydi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 36,
+            "vopros": "'this' nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "O'zgaruvchi nomi"
+                },
+                {
+                    "key": "b",
+                    "text": "Hozirgi kontekstdagi obyektga ishora"
+                },
+                {
+                    "key": "c",
+                    "text": "Funksiya parametri"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS selektori"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 37,
+            "vopros": "Event bubbling nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Hodisa tashqaridan ichkariga"
+                },
+                {
+                    "key": "b",
+                    "text": "Hodisa ichkaridan tashqariga"
+                },
+                {
+                    "key": "c",
+                    "text": "Hodisa o'chirilishi"
+                },
+                {
+                    "key": "d",
+                    "text": "Hodisa yaratilishi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 38,
+            "vopros": "Callback function nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Tashqi fayldan keladigan funksiya"
+                },
+                {
+                    "key": "b",
+                    "text": "Argument sifatida uzatilgan va keyin chaqiriladigan funksiya"
+                },
+                {
+                    "key": "c",
+                    "text": "Avtomatik ishlaydigan funksiya"
+                },
+                {
+                    "key": "d",
+                    "text": "Rekursiv funksiya"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 39,
+            "vopros": "Promise nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Sinxron operatsiya"
+                },
+                {
+                    "key": "b",
+                    "text": "Asinxron operatsiyalarni boshqarish uchun obyekt"
+                },
+                {
+                    "key": "c",
+                    "text": "CSS animatsiyasi"
+                },
+                {
+                    "key": "d",
+                    "text": "HTML atributi"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 40,
+            "vopros": "null va undefined farqi nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Ikkisi ham bir xil"
+                },
+                {
+                    "key": "b",
+                    "text": "undefined qiymat berilmagan, null ataylab bo'sh"
+                },
+                {
+                    "key": "c",
+                    "text": "null qiymat berilmagan, undefined ataylab bo'sh"
+                },
+                {
+                    "key": "d",
+                    "text": "null raqam, undefined matn"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 41,
+            "vopros": "Spread va Rest operatorlari farqi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Spread yig'adi, Rest tarqatadi"
+                },
+                {
+                    "key": "b",
+                    "text": "Spread tarqatadi, Rest yig'adi"
+                },
+                {
+                    "key": "c",
+                    "text": "Ikkisi ham bir xil"
+                },
+                {
+                    "key": "d",
+                    "text": "Spread CSS, Rest HTML uchun"
+                }
+            ],
+            "trueVariant": "b",
+            "score": 1
+        },
+        {
+            "id": 42,
+            "vopros": "Template literal qanday belgilanadi?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Qo'shtirnoq bilan"
+                },
+                {
+                    "key": "b",
+                    "text": "Bitta tirnoq bilan"
+                },
+                {
+                    "key": "c",
+                    "text": "Backtick (`) bilan"
+                },
+                {
+                    "key": "d",
+                    "text": "Qavslar bilan"
+                }
+            ],
+            "trueVariant": "c",
+            "score": 1
+        },
+        {
+            "id": 43,
+            "vopros": "Closure nima?",
+            "variants": [
+                {
+                    "key": "a",
+                    "text": "Faylni yopish"
+                },
+                {
+                    "key": "b",
+                    "text": "Funksiya ichida funksiya va tashqi o'zgaruvchilarga kirish"
+                },
+                {
+                    "key": "c",
+                    "text": "Loop tugatish"
+                },
+                {
+                    "key": "d",
+                    "text": "CSS xususiyati"
                 }
             ],
             "trueVariant": "b",
@@ -1243,6 +2062,13 @@
             "name": "Timur",
             "surname": "Abdullayev",
             "points": 0
+        },
+        {
+            "firstName": "Saidazim",
+            "lastName": "Buriboyev",
+            "login": "37138",
+            "password": 1314766,
+            "totalScore": 0
         }
     ]
 }
