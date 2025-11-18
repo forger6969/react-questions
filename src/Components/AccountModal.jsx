@@ -27,7 +27,7 @@ const AccountModal = ({ setModal }) => {
                 console.log(find);
                 if (find.password === +password) {
                     localStorage.setItem(`currentUser`, JSON.stringify(find))
-                    setModal(close)
+                    closeModal()
                     setUser(find)
                 }
             }
