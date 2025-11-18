@@ -18,7 +18,7 @@ const AccountModal = ({ setModal }) => {
     const checkLogin = async () => {
         try {
 
-            const res = await axios.get(`http://localhost:3001/users`)
+            const res = await axios.get(`https://json-questions-2.onrender.com/users`)
             const resData = res.data
             console.log(res);
             const find = resData.find(f => f.login === login)

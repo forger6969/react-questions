@@ -117,7 +117,7 @@ const ReactQuestions = ({ questions, setWarning, warning }) => {
 
     return (
         <>
-            <p onClick={leaveTestClick} className='text-[#2E37A4] font-medium text-[20px] relative top-10 left-10' to="/"> На главную</p>
+            <p onClick={leaveTestClick} className='text-[#2E37A4] font-medium text-[20px] relative top-10 left-10 cursor-pointer' to="/"> На главную</p>
             <div className='flex flex-col mx-auto pt-[30px]'>
 
                 {isFinal ?
