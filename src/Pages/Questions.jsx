@@ -8,7 +8,7 @@ import Warning from '../Components/Warning';
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_TOKEN;
 const CHAT_ID = import.meta.env.VITE_CHAT_ID;
 
-const ReactQuestions = ({ questions, setWarning, warning }) => {
+const ReactQuestions = ({ questions, setWarning, warning, type }) => {
 
     const [page, setPage] = useState(0)
     const [answer, setAnswer] = useState({})
@@ -70,11 +70,22 @@ const ReactQuestions = ({ questions, setWarning, warning }) => {
 
             if (currentUser) {
 
+                const test_date = new Date()
+
                 const postObject = `Ученик ${currentUser.firstName} ${currentUser.lastName} набрал ${score} баллов`
 
                 axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                     chat_id: CHAT_ID,
                     text: postObject
+                })
+
+                const postNewTest = axios.post(`https://json-questions-2.onrender.com/test_results`, {
+                    student_id: currentUser.id,
+                    mentor_id: "1fo0",
+                    test_score: score,
+                    test_max_score: questions.length,
+                    test_type: type,
+                    test_date: test_date
                 })
             }
 
@@ -107,12 +118,12 @@ const ReactQuestions = ({ questions, setWarning, warning }) => {
         navigate(`/`)
     }
 
-    // useEffect(() => {
-    //     window.addEventListener(`blur`, handleBlur)
-    //     return () => {
-    //         window.removeEventListener(`blur`, handleBlur)
-    //     }
-    // }, [])
+    useEffect(() => {
+        window.addEventListener(`blur`, handleBlur)
+        return () => {
+            window.removeEventListener(`blur`, handleBlur)
+        }
+    }, [])
 
 
     return (

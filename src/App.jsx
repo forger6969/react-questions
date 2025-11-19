@@ -7,6 +7,7 @@ import Account from './Components/Account'
 import Warning from './Components/Warning'
 
 import { AppContext } from './AppContext'
+import TestsHistory from './Pages/TestsHistory'
 
 const App = () => {
 
@@ -50,8 +51,9 @@ const App = () => {
         } />
         {quests.react &&
           <>
-            <Route path='/ReactQuestions' element={<ReactQuestions questions={quests.react} />} />
-            <Route path='/JavaScriptQuestions' element={<ReactQuestions questions={quests.js} setWarning={setWarning} warning={isWarning} />} />
+            <Route path='/ReactQuestions' element={<ReactQuestions questions={quests.react} setWarning={setWarning} warning={isWarning} type="Тест по Реакт" />} />
+            <Route path='/JavaScriptQuestions' element={<ReactQuestions questions={quests.js} setWarning={setWarning} warning={isWarning} type="Тест по JavaScript" />} />
+            <Route path='/HistoryTest' element={<TestsHistory />} />
           </>
         }
 
