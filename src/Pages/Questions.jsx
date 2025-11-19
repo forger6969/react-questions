@@ -79,13 +79,13 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
                     text: postObject
                 })
 
-                const postNewTest = axios.post(`https://json-questions-2.onrender.com/test_results`, {
+                const postNewTest = axios.post(`https://json-questions-3.onrender.com/add-test-result`, {
                     student_id: currentUser.id,
                     mentor_id: "1fo0",
                     test_score: score,
                     test_max_score: questions.length,
-                    test_type: type,
-                    test_date: test_date
+                    test_date: new Date(),
+                    test_type: type
                 })
             }
 

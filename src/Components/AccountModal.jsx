@@ -18,22 +18,38 @@ const AccountModal = ({ setModal }) => {
     const checkLogin = async () => {
         try {
 
-            const res = await axios.get(`https://json-questions-2.onrender.com/users`)
-            const resData = res.data
-            console.log(res);
-            const find = resData.find(f => f.login === login)
+            const postLogin = await axios.post(`https://json-questions-3.onrender.com/login/user`, {
+                login: login,
+                password: password
+            })
 
-            if (find) {
-                console.log(find);
-                if (find.password === +password) {
-                    localStorage.setItem(`currentUser`, JSON.stringify(find))
-                    closeModal()
-                    setUser(find)
-                }
+            const resData = await postLogin.data
+            console.log(postLogin);
+
+            console.log(resData);
+
+            if (postLogin.status === 200) {
+                localStorage.setItem(`currentUser`, JSON.stringify(resData.user))
+                closeModal()
+                setUser(resData.user)
             }
 
-        } catch (err) {
-            console.log(err);
+        } catch (error) {
+            if (error.response) {
+                // Сервер ответил с ошибкой (400 / 401 / 500)
+                console.log("Ошибка сервера:", error.response.data);
+                console.log("Статус:", error.response.status);
+
+                if (error.response.status === 400) {
+                    alert("Неправильный логин или пароль");
+                }
+            } else if (error.request) {
+                // Запрос ушёл, но ответа нет
+                console.log("Нет ответа от сервера");
+            } else {
+                // Ошибка в коде
+                console.log("Ошибка:", error.message);
+            }
         }
     }
 

@@ -11,6 +11,8 @@ const Account = () => {
     const { setUser, currentUser } = user
 
     const [modal, setModal] = useState(false)
+    console.log(currentUser);
+    
 
     return (
         <div>

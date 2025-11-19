@@ -7,7 +7,7 @@ const HistoryTests = () => {
     const [tests, setTests] = useState([])
 
     const getTests = async () => {
-        const get = await axios.get(`https://json-questions-2.onrender.com/test_results`)
+        const get = await axios.get(`https://json-questions-3.onrender.com/results`)
         const data = get.data
         setTests(data)
     }

@@ -17,8 +17,8 @@ const App = () => {
   const [user, setUser] = useState({ firstName: "Войти" })
 
   const get = async () => {
-    const react = await axios.get(`https://json-questions-2.onrender.com/reactQuests`)
-    const js = await axios.get(`https://json-questions-2.onrender.com/JavaScriptQuestions`)
+    const react = await axios.get(`https://json-questions-3.onrender.com/react-questions`)
+    const js = await axios.get(`https://json-questions-3.onrender.com/js-questions`)
     const quests = {
       react: react.data,
       js: js.data
