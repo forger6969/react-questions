@@ -21,6 +21,9 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
 
     const [leaveModal, setLeaveModal] = useState(false)
 
+    const [minute, setMinute] = useState(24)
+    const [secundes, setSecundes] = useState(59)
+
     const nextPage = () => {
         setPage(prev => prev + 1)
 
@@ -97,6 +100,47 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
 
     }
 
+    const finalTimer = () => {
+
+        let score = 0
+        const valuesAnswerArr = Object.values(answer)
+        console.log(`Answer: ${valuesAnswerArr.length} questiins:${questions.length}`);
+
+        questions.map((m, i) => {
+            if (m.trueVariant === answer[i]) {
+                score += m.score
+            }
+        })
+
+        console.log(score);
+        setScore(score)
+        setFinal(true)
+        setModal(false)
+
+        const currentUser = JSON.parse(localStorage.getItem(`currentUser`))
+
+        if (currentUser) {
+            const test_date = new Date()
+
+            const postObject = `Ученик ${currentUser.firstName} ${currentUser.lastName} набрал ${score} баллов`
+
+            axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                chat_id: CHAT_ID,
+                text: postObject
+            })
+
+            const postNewTest = axios.post(`https://json-questions-3.onrender.com/add-test-result`, {
+                student_id: currentUser.id,
+                mentor_id: "1fo0",
+                test_score: score,
+                test_max_score: questions.length,
+                test_date: new Date(),
+                test_type: type
+            })
+        }
+
+    }
+
     const modalOpen = () => {
         setModal(true)
     }
@@ -118,8 +162,35 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
         navigate(`/`)
     }
 
+    console.log(`${minute}:${secundes}`);
+
+    useEffect(() => {
+        if (minute === 0 && secundes === 0) {
+            finalTimer()
+            return
+        }
+
+        const timer = setInterval(() => {
+            setSecundes(prev => {
+                if (prev === 0) {
+                    if (minute === 0) {
+                        return 0;
+                    }
+                    setMinute(m => m - 1);
+                    return 59;
+                }
+                return prev - 1;
+            });
+        }, 1000);
+
+        return () => {
+            clearInterval(timer);
+        }
+    }, [minute, secundes])
+
     useEffect(() => {
         window.addEventListener(`blur`, handleBlur)
+
         return () => {
             window.removeEventListener(`blur`, handleBlur)
         }
@@ -143,6 +214,9 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
                     :
                     <>
                         <p className='text-center'>{page + 1}/{questions.length}</p>
+                        <div className="bg-[#2e38a490] text-white text-[26px] font-bold px-6 py-2 rounded-[10px] mx-auto w-fit shadow-md fixed right-[230px] top-[165px]">
+                            {minute}:{secundes.toString().padStart(2, "0")}
+                        </div>
 
                         {questions[page] && <Question question={questions[page]} setAnswer={addAnswer} selected={answer[page]} id={page} />}
 
