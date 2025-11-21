@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { AppContext } from '../AppContext'
 
 const Home = () => {
+
+    const { theme } = useContext(AppContext)
+    const { isDark } = theme
+
     return (
         <div>
-            <div className="bg-white shadow-xl flex flex-col gap-[20px] w-[250px] h-[100vh] fixed left-0 top-0 p-[30px] border-r border-gray-200">
+            <div className={`${isDark ? `bg-[#14172A]` : `bg-white`} shadow-xl flex flex-col gap-[20px] w-[250px] h-[100vh] fixed left-0 top-0 p-[30px] border-r border-gray-200`}>
                 <NavLink
                     to="/ReactQuestions"
                     className={({ isActive }) =>
@@ -28,7 +33,7 @@ const Home = () => {
 
             <p className='text-[#adadad] text-center text-[30px] pt-[300px]'>Выберите тест</p>
 
-        </div>
+        </div >
     )
 }
 

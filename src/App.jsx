@@ -15,6 +15,7 @@ const App = () => {
   const navigate = useNavigate()
   const [isWarning, setWarning] = useState(false)
   const [user, setUser] = useState({ firstName: "Войти" })
+  const [isDark, setTheme] = useState(false)
 
   const get = async () => {
     const react = await axios.get(`https://json-questions-3.onrender.com/react-questions`)
@@ -38,30 +39,44 @@ const App = () => {
     getCurrentUser()
   }, [])
 
+  useEffect(() => {
+    document.body.style.background = isDark ? `#0D0F1A` : `#dcdbdb`
+  }, [isDark])
+
   return (
     <AppContext.Provider value={{
       user: {
         currentUser: user,
         setUser: setUser
+      },
+      theme: {
+        isDark: isDark,
+        setTheme: setTheme
       }
     }}>
-      <Account />
-      <Routes>
-        <Route path='/' element={<Home />
-        } />
-        {quests.react &&
-          <>
-            <Route path='/ReactQuestions' element={<ReactQuestions questions={quests.react} setWarning={setWarning} warning={isWarning} type="Тест по Реакт" />} />
-            <Route path='/JavaScriptQuestions' element={<ReactQuestions questions={quests.js} setWarning={setWarning} warning={isWarning} type="Тест по JavaScript" />} />
-            <Route path='/HistoryTest' element={<TestsHistory />} />
-          </>
+
+      <div>
+
+        <Account />
+        <Routes>
+          <Route path='/' element={<Home />
+          } />
+          {quests.react &&
+            <>
+              <Route path='/ReactQuestions' element={<ReactQuestions questions={quests.react} setWarning={setWarning} warning={isWarning} type="Тест по Реакт" />} />
+              <Route path='/JavaScriptQuestions' element={<ReactQuestions questions={quests.js} setWarning={setWarning} warning={isWarning} type="Тест по JavaScript" />} />
+              <Route path='/HistoryTest' element={<TestsHistory />} />
+            </>
+          }
+
+        </Routes>
+
+        {isWarning &&
+          <Warning setModal={setWarning} text={`Не сворачивайте окно во время теста`} />
         }
 
-      </Routes>
 
-      {isWarning &&
-        <Warning setModal={setWarning} text={`Не сворачивайте окно во время теста`} />
-      }
+      </div>
 
     </AppContext.Provider>
   )
