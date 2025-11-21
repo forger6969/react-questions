@@ -9,7 +9,12 @@ const HistoryTests = () => {
     const getTests = async () => {
         const get = await axios.get(`https://json-questions-3.onrender.com/results`)
         const data = get.data
-        setTests(data)
+
+        const user = JSON.parse(localStorage.getItem(`currentUser`))
+
+        const filter = data.filter((f) => f.student_id === user.id)
+
+        setTests(filter)
     }
 
 
