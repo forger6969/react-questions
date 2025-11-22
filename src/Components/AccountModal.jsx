@@ -12,6 +12,7 @@ const AccountModal = ({ setModal }) => {
     const [password, setPassword] = useState(null)
 
     const closeModal = () => {
+        
         setModal(false)
     }
 
