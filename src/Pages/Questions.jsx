@@ -73,6 +73,7 @@ const Questions = ({ setWarning, warning, type }) => {
             setQuestPage(questions.questions[prev]);
         }
     };
+    
 
 
     const addAnswer = (key, id) => {
