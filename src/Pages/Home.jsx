@@ -45,6 +45,7 @@ const Home = () => {
                     )
                 })}
             </div>
+            
 
             <p className='text-[#adadad] text-center text-[30px] pt-[300px]'>Выберите тест</p>
 
