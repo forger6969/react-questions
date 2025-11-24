@@ -5,13 +5,15 @@ const Question = ({ question, setAnswer, selected, id }) => {
 
   const { theme } = useContext(AppContext);
   const { isDark } = theme;
+  console.log(question);
+
 
   return (
     <div className="flex justify-center mt-20">
       <div className={`${isDark ? "bg-[#14172A]" : "bg-white"} rounded-xl w-1/2 p-6 shadow-lg`}>
 
         <p className={`text-lg font-semibold border-b border-gray-300 pb-2 mb-4 ${isDark ? `text-[#2E37A4]` : `text-black`}`}>
-          {question.vopros}
+          {question.question}
         </p>
 
         <form className="flex flex-col gap-4">

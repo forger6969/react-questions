@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Question from '../Components/Question'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Warning from '../Components/Warning';
 
 
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_TOKEN;
 const CHAT_ID = import.meta.env.VITE_CHAT_ID;
 
-const ReactQuestions = ({ questions, setWarning, warning, type }) => {
+const Questions = ({ setWarning, warning, type }) => {
+
+    const { id } = useParams()
+
 
     const [page, setPage] = useState(0)
     const [answer, setAnswer] = useState({})
@@ -23,23 +26,54 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
 
     const [minute, setMinute] = useState(24)
     const [secundes, setSecundes] = useState(59)
+    const [questions, setQuest] = useState(null)
+    const [quesitonsPage, setQuestPage] = useState(null)
+
+
+    const getQuestionByID = async () => {
+        try {
+
+            const data = await axios.get(`https://json-questions-3.onrender.com/tests/${id}`)
+            const test = data.data
+            setQuest(test)
+            console.log(test);
+
+            const filter = test.questions.find((f) => f.id === page)
+
+            setQuestPage(filter)
+            console.log(quesitonsPage);
+
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+
 
     const nextPage = () => {
-        setPage(prev => prev + 1)
+        const next = page + 1;
 
-        if (page + 1 >= questions.length) {
-            setPage(questions.length - 1)
+        if (!questions?.questions) return;
+
+        if (next < questions.questions.length) {
+            setPage(next);
+            setQuestPage(questions.questions[next]);
+
         }
-
-    }
+    };
 
     const prevPage = () => {
-        if (page <= 0) {
-            setPage(0)
-        } else {
-            setPage(prev => prev - 1)
+        if (!questions?.questions) return;
+
+        const prev = page - 1;
+
+        if (prev >= 0) {
+            setPage(prev);
+            setQuestPage(questions.questions[prev]);
         }
-    }
+    };
+
 
     const addAnswer = (key, id) => {
         setAnswer(prev => ({
@@ -55,11 +89,11 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
         console.log(`Answer: ${valuesAnswerArr.length} questiins:${questions.length}`);
 
 
-        if (valuesAnswerArr.length >= questions.length) {
+        if (valuesAnswerArr.length >= questions.questions.length) {
             console.log(`hello`);
 
-            questions.map((m, i) => {
-                if (m.trueVariant === answer[i]) {
+            questions.questions.map((m, i) => {
+                if (m.correctAnswer === answer[i]) {
                     score += m.score
                 }
             })
@@ -82,13 +116,13 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
                     text: postObject
                 })
 
-                const postNewTest = axios.post(`https://json-questions-3.onrender.com/add-test-result`, {
+                const postNewTest = axios.post(`https://json-questions-3.onrender.com/results`, {
                     student_id: currentUser.id,
                     mentor_id: "1fo0",
+                    test_id: questions.id,
                     test_score: score,
-                    test_max_score: questions.length,
-                    test_date: new Date(),
-                    test_type: type
+                    test_max_score: questions.maxScore,
+                    test_type: questions.description
                 })
             }
 
@@ -106,8 +140,8 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
         const valuesAnswerArr = Object.values(answer)
         console.log(`Answer: ${valuesAnswerArr.length} questiins:${questions.length}`);
 
-        questions.map((m, i) => {
-            if (m.trueVariant === answer[i]) {
+        questions.questions.map((m, i) => {
+            if (m.correctAnswer === answer[i]) {
                 score += m.score
             }
         })
@@ -129,13 +163,13 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
                 text: postObject
             })
 
-            const postNewTest = axios.post(`https://json-questions-3.onrender.com/add-test-result`, {
+            const postNewTest = axios.post(`https://json-questions-3.onrender.com/results`, {
                 student_id: currentUser.id,
                 mentor_id: "1fo0",
+                test_id: questions.id,
                 test_score: score,
-                test_max_score: questions.length,
-                test_date: new Date(),
-                test_type: type
+                test_max_score: questions.maxScore,
+                test_type: questions.description
             })
         }
 
@@ -189,11 +223,12 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
     }, [minute, secundes])
 
     useEffect(() => {
-        window.addEventListener(`blur`, handleBlur)
+        // window.addEventListener(`blur`, handleBlur)
+        getQuestionByID()
 
-        return () => {
-            window.removeEventListener(`blur`, handleBlur)
-        }
+        // return () => {
+        //     window.removeEventListener(`blur`, handleBlur)
+        // }
     }, [])
 
 
@@ -206,24 +241,27 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
 
                     <>
                         <div className='bg-[#2e38a487] w-fit p-[10px] rounded-[8px] flex flex-col items-center mx-auto my-[250px]'>
-                            <p className='text-[20px] text-white font-medium'>{score}/{questions.length}</p>
+                            <p className='text-[20px] text-white font-medium'>{score}/{questions.maxScore}</p>
                             <Link to="/" className='bg-[#2E37A4] text-white px-[20px] py-[5px] rounded-[8px]'>На главную</Link >
                         </div>
                     </>
 
                     :
                     <>
-                        <p className='text-center'>{page + 1}/{questions.length}</p>
+                        <p className='text-center'>
+                            {page + 1}/{questions?.questions?.length || 0}
+                        </p>
+
                         <div className="bg-[#2e38a490] text-white text-[26px] font-bold px-6 py-2 rounded-[10px] mx-auto w-fit shadow-md fixed right-[230px] top-[165px]">
                             {minute}:{secundes.toString().padStart(2, "0")}
                         </div>
 
-                        {questions[page] && <Question question={questions[page]} setAnswer={addAnswer} selected={answer[page]} id={page} />}
+                        {quesitonsPage && <Question question={quesitonsPage} setAnswer={addAnswer} selected={answer[page]} id={page} />}
 
                         <div className='flex justify-center items-center gap-[40px] pt-[20px]'>
                             <button className='bg-[#2E37A4] px-[15px] py-[5px] rounded-[8px] text-white' onClick={prevPage}>Предыдуший</button>
 
-                            {page + 1 >= questions.length ? <button className='bg-[#2E37A4] px-[15px] py-[5px] rounded-[8px] text-white' onClick={modalOpen}>Завершить</button> : <button className='bg-[#2E37A4] px-[15px] py-[5px] rounded-[8px] text-white' onClick={nextPage}>Следующий вопрос</button>}
+                            {questions && page + 1 >= questions.questions.length ? <button className='bg-[#2E37A4] px-[15px] py-[5px] rounded-[8px] text-white' onClick={modalOpen}>Завершить</button> : <button className='bg-[#2E37A4] px-[15px] py-[5px] rounded-[8px] text-white' onClick={nextPage}>Следующий вопрос</button>}
                         </div>
 
                         {openModal &&
@@ -292,4 +330,4 @@ const ReactQuestions = ({ questions, setWarning, warning, type }) => {
     )
 }
 
-export default ReactQuestions
+export default Questions

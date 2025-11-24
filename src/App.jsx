@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import ReactQuestions from './Pages/Questions'
+import Questions from './Pages/Questions'
 import Home from './Pages/Home'
 import axios from 'axios'
 import Account from './Components/Account'
@@ -17,15 +17,6 @@ const App = () => {
   const [user, setUser] = useState({ firstName: "Войти" })
   const [isDark, setTheme] = useState(false)
 
-  const get = async () => {
-    const react = await axios.get(`https://json-questions-3.onrender.com/react-questions`)
-    const js = await axios.get(`https://json-questions-3.onrender.com/js-questions`)
-    const quests = {
-      react: react.data,
-      js: js.data
-    }
-    setQuest(quests)
-  }
 
   const getCurrentUser = () => {
     const currentUser = JSON.parse(localStorage.getItem(`currentUser`))
@@ -35,7 +26,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    get()
     getCurrentUser()
   }, [])
 
@@ -61,13 +51,12 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />
           } />
-          {quests.react &&
-            <>
-              <Route path='/ReactQuestions' element={<ReactQuestions questions={quests.react} setWarning={setWarning} warning={isWarning} type="Тест по Реакт" />} />
-              <Route path='/JavaScriptQuestions' element={<ReactQuestions questions={quests.js} setWarning={setWarning} warning={isWarning} type="Тест по JavaScript" />} />
-              <Route path='/HistoryTest' element={<TestsHistory />} />
-            </>
-          }
+
+          <>
+            <Route path='/Questions/:id' element={<Questions setWarning={setWarning} warning={isWarning} />} />
+            <Route path='/HistoryTest' element={<TestsHistory />} />
+          </>
+
 
         </Routes>
 
