@@ -33,6 +33,8 @@ const App = () => {
     document.body.style.background = isDark ? `#0D0F1A` : `#dcdbdb`
   }, [isDark])
 
+
+
   return (
     <AppContext.Provider value={{
       user: {
@@ -46,7 +48,6 @@ const App = () => {
     }}>
 
       <div>
-
         <Account />
         <Routes>
           <Route path='/' element={<Home />

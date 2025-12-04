@@ -73,7 +73,7 @@ const Questions = ({ setWarning, warning, type }) => {
             setQuestPage(questions.questions[prev]);
         }
     };
-    
+
 
 
     const addAnswer = (key, id) => {
@@ -81,6 +81,7 @@ const Questions = ({ setWarning, warning, type }) => {
             ...prev, [id]: key
         }))
     }
+
 
 
 
@@ -122,9 +123,11 @@ const Questions = ({ setWarning, warning, type }) => {
                     mentor_id: "1fo0",
                     test_id: questions.id,
                     test_score: score,
-                    test_max_score: questions.maxScore,
                     test_type: questions.description
                 })
+
+                console.log(postNewTest);
+
             }
 
         } else {
