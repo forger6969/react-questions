@@ -29,9 +29,6 @@ const App = () => {
     getCurrentUser()
   }, [])
 
-  useEffect(() => {
-    document.body.style.background = isDark ? `#0D0F1A` : `#dcdbdb`
-  }, [isDark])
 
 
 

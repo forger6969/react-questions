@@ -1,25 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { NavLink, useSearchParams } from 'react-router-dom'
-import { AppContext } from '../AppContext'
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 const Home = () => {
-
-    const { theme } = useContext(AppContext)
-    const { isDark } = theme
-
     const [tests, setTests] = useState([])
 
     const getQuestsList = async () => {
         try {
-
-            const data = await axios.get(`https://json-questions-3.onrender.com/tests`)
-            const test = await data.data
-
-            setTests(test)
-
+            const { data } = await axios.get(`https://json-questions-3.onrender.com/tests`)
+            setTests(data)
         } catch (err) {
-            console.log(err);
+            console.log(err)
         }
     }
 
@@ -28,28 +19,45 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
-            <div className={`${isDark ? `bg-[#14172A]` : `bg-white`} shadow-xl flex flex-col gap-[20px] w-[250px] h-[100vh] fixed left-0 top-0 p-[30px] border-r border-gray-200`}>
-                {tests.map((m) => {
-
-                    return (
+        <div className="flex min-h-screen bg-base-200">
+            {/* Боковое меню */}
+            <aside className="w-64 p-6 bg-base-100 shadow-lg rounded-r-lg border-r border-gray-200 flex flex-col gap-3">
+                <h2 className="text-2xl font-bold text-center mb-4 text-primary">Тесты</h2>
+                {tests.length === 0 ? (
+                    <p className="text-gray-500 text-center mt-4">Загрузка...</p>
+                ) : (
+                    tests.map((test) => (
                         <NavLink
-                            to={`/Questions/${m.id}`}
+                            key={test.id}
+                            to={`/Questions/${test.id}`}
                             className={({ isActive }) =>
-                                `text-[18px] font-medium transition-colors duration-200 hover:text-[#2f3cca] rounded p-[10px] ${isActive ? "text-[#2E37A4] font-semibold bg-[#e3e3e3]" : "text-gray-700"
+                                `btn btn-ghost btn-block text-left ${isActive ? 'btn-primary text-white' : 'text-gray-700 hover:bg-base-200'
                                 }`
                             }
                         >
-                            {m.name}
+                            {test.name}
                         </NavLink>
-                    )
-                })}
-            </div>
-            
+                    ))
+                )}
+            </aside>
 
-            <p className='text-[#adadad] text-center text-[30px] pt-[300px]'>Выберите тест</p>
-
-        </div >
+            {/* Основная область */}
+            <main className="flex-1 flex flex-col justify-center items-center p-6">
+                <div className="card w-full max-w-md bg-base-100 shadow-xl">
+                    <div className="card-body text-center">
+                        <h3 className="card-title text-3xl text-gray-600">Добро пожаловать!</h3>
+                        <p className="text-gray-500 mt-2">
+                            Выберите тест слева, чтобы начать проверку своих знаний.
+                        </p>
+                        <div className="mt-4">
+                            <button className="btn btn-primary btn-sm" disabled>
+                                Выберите тест
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     )
 }
 

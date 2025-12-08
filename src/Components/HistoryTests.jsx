@@ -3,77 +3,63 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const HistoryTests = () => {
-
     const [tests, setTests] = useState([])
 
     const getTests = async () => {
         const get = await axios.get(`https://json-questions-3.onrender.com/results`)
         const data = get.data
-
-        const user = JSON.parse(localStorage.getItem(`currentUser`))
-
+        const user = JSON.parse(localStorage.getItem('currentUser'))
         const filter = data.filter((f) => f.student_id === user.id)
-
         setTests(filter)
     }
 
-
     useEffect(() => {
         getTests()
-    })
+    }, [])
 
     return (
         <div className="p-6">
-
-            <Link to="/" className="text-[#2E37A4] font-semibold hover:underline">
+            <Link to="/" className="btn btn-ghost mb-4">
                 Главное
             </Link>
 
-            <div className="p-6 bg-gray-50 max-h-[600px] w-[80%] rounded-lg mx-auto mt-8 overflow-y-auto shadow-sm">
+            <div className="bg-base-100 p-6 rounded-lg shadow-lg max-h-[600px] w-[80%] mx-auto mt-8 overflow-y-auto">
+                <h2 className="text-3xl font-bold mb-6 text-primary text-center">История тестов</h2>
 
-                <h2 className="text-3xl font-bold mb-6" style={{ color: '#2E37A4' }}>
-                    История тестов
-                </h2>
-
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                     {tests.map((m) => {
-                        const date = new Date(m.test_date);
-                        const percent = Math.round((m.test_score / m.test_max_score) * 100);
+                        const date = new Date(m.test_date)
+                        const percent = Math.round((m.test_score / m.test_max_score) * 100)
+                        const badgeColor = percent >= 85 ? 'badge-success' : 'badge-warning'
 
                         return (
                             <div
                                 key={m.id}
-                                className="bg-white shadow-md rounded-lg p-4 flex justify-between items-center border-l-4"
-                                style={{ borderColor: '#2E37A4' }}
+                                className="card bg-base-100 shadow-md border-l-4 border-primary"
                             >
-                                <div>
-                                    <h3 className="text-xl font-semibold text-gray-800">{m.test_type}</h3>
-                                    <p className="text-gray-500 text-sm">
-                                        Дата: {date.getDate()}.{date.getMonth() + 1}.{date.getFullYear()}
-                                    </p>
-                                </div>
+                                <div className="card-body flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                    <div>
+                                        <h3 className="card-title">{m.test_type}</h3>
+                                        <p className="text-sm text-gray-500">
+                                            Дата: {date.getDate()}.{date.getMonth() + 1}.{date.getFullYear()}
+                                        </p>
+                                    </div>
 
-                                <div className="flex items-center gap-4">
-                                    <p className="text-gray-700">
-                                        Набрано баллов {m.test_score} из {m.test_max_score}
-                                    </p>
-
-                                    <span
-                                        className={`px-3 py-1 rounded-full text-white font-semibold ${percent >= 85 ? 'bg-green-600' : 'bg-yellow-600'
-                                            }`}
-                                    >
-                                        {percent}%
-                                    </span>
+                                    <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
+                                        <p>
+                                            Набрано баллов {m.test_score} из {m.test_max_score}
+                                        </p>
+                                        <span className={`badge ${badgeColor} text-white font-semibold`}>
+                                            {percent}%
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
-
             </div>
-
         </div>
-
     )
 }
 
