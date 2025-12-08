@@ -3,8 +3,9 @@ import { AppContext } from '../AppContext'
 import axios from 'axios'
 
 const AccountModal = ({ setModal }) => {
-    const { user } = useContext(AppContext)
+    const { user, loader } = useContext(AppContext)
     const { setUser } = user
+    const { setLoader } = loader
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
@@ -39,6 +40,8 @@ const AccountModal = ({ setModal }) => {
             } else {
                 console.log('Ошибка:', error.message)
             }
+        } finally {
+            setLoader(false)
         }
     }
 

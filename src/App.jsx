@@ -8,6 +8,7 @@ import Warning from './Components/Warning'
 
 import { AppContext } from './AppContext'
 import TestsHistory from './Pages/TestsHistory'
+import Loader from './Components/loader'
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
   const [isWarning, setWarning] = useState(false)
   const [user, setUser] = useState({ firstName: "Войти" })
   const [isDark, setTheme] = useState(false)
+  const [loader, setLoader] = useState(true)
 
 
   const getCurrentUser = () => {
@@ -25,10 +27,21 @@ const App = () => {
     }
   }
 
+  const getQuestsList = async () => {
+    try {
+      const { data } = await axios.get(`https://json-questions-3.onrender.com/tests`)
+      setTests(data)
+    } catch (err) {
+      console.log(err)
+    } finally {
+      setLoader(false)
+    }
+  }
+
   useEffect(() => {
     getCurrentUser()
+    getQuestsList()
   }, [])
-
 
 
 
@@ -41,29 +54,37 @@ const App = () => {
       theme: {
         isDark: isDark,
         setTheme: setTheme
+      },
+      loader: {
+        loader: loader,
+        setLoader: setLoader
       }
     }}>
 
-      <div>
-        <Account />
-        <Routes>
-          <Route path='/' element={<Home />
-          } />
+      {loader ? <Loader /> :
 
-          <>
-            <Route path='/Questions/:id' element={<Questions setWarning={setWarning} warning={isWarning} />} />
-            <Route path='/HistoryTest' element={<TestsHistory />} />
-          </>
+        <div>
+          <Account />
+          <Routes>
+            <Route path='/' element={<Home />
+            } />
 
-
-        </Routes>
-
-        {isWarning &&
-          <Warning setModal={setWarning} text={`Не сворачивайте окно во время теста`} />
-        }
+            <>
+              <Route path='/Questions/:id' element={<Questions setWarning={setWarning} warning={isWarning} />} />
+              <Route path='/HistoryTest' element={<TestsHistory />} />
+            </>
 
 
-      </div>
+          </Routes>
+
+          {isWarning &&
+            <Warning setModal={setWarning} text={`Не сворачивайте окно во время теста`} />
+          }
+
+
+        </div>
+
+      }
 
     </AppContext.Provider>
   )

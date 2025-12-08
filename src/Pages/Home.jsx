@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
+import { AppContext } from '../AppContext'
 
 const Home = () => {
     const [tests, setTests] = useState([])
+    const { loader } = useContext(AppContext)
+    const { setLoader } = loader
 
     const getQuestsList = async () => {
         try {
@@ -11,6 +14,8 @@ const Home = () => {
             setTests(data)
         } catch (err) {
             console.log(err)
+        } finally {
+            setLoader(false)
         }
     }
 

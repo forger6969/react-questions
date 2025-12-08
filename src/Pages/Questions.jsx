@@ -174,19 +174,19 @@ const Questions = () => {
                     )}
 
                     {/* Навигация */}
-                    <div className="flex justify-center items-center gap-4 mt-4">
-                        <button className="btn btn-outline" onClick={prevPage}>
-                            Предыдущий
-                        </button>
+                    <div className="gap-4 mt-4 join flex justify-center">
+                        <button onClick={prevPage} className="join-item btn">«</button>
+                        <button className="join-item btn">{page + 1}</button>
+
                         {questions && page + 1 >= questions.questions.length ? (
                             <button className="btn btn-primary" onClick={() => setModal(true)}>
                                 Завершить
                             </button>
                         ) : (
-                            <button className="btn btn-primary" onClick={nextPage}>
-                                Следующий вопрос
-                            </button>
+                            <button onClick={nextPage} className="join-item btn">»</button>
                         )}
+
+
                     </div>
 
                     {/* Модалка подтверждения завершения */}
