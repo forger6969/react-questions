@@ -11,6 +11,7 @@ const Questions = () => {
     const { id } = useParams()
     const navigate = useNavigate()
 
+    const [started, setStarted] = useState(false)
     const [page, setPage] = useState(0)
     const [answer, setAnswer] = useState({})
     const [score, setScore] = useState(0)
@@ -20,8 +21,8 @@ const Questions = () => {
     const [warningQuest, setWarningQuest] = useState(false)
     const [leaveModal, setLeaveModal] = useState(false)
 
-    const [minute, setMinute] = useState(24)
-    const [seconds, setSeconds] = useState(59)
+    const [minute, setMinute] = useState(0)
+    const [seconds, setSeconds] = useState(0)
     const [questions, setQuestions] = useState(null)
     const [currentQuestion, setCurrentQuestion] = useState(null)
 
@@ -29,7 +30,14 @@ const Questions = () => {
         try {
             const { data } = await axios.get(`https://json-questions-3.onrender.com/tests/${id}`)
             setQuestions(data)
-            setCurrentQuestion(data.questions[page])
+
+            // Устанавливаем таймер (в миллисекундах), если не указан — 25 минут
+            const totalMs = data.time ?? 25 * 60 * 1000
+            setMinute(Math.floor(totalMs / 60000))
+            setSeconds(Math.floor((totalMs % 60000) / 1000))
+
+            // Текущий вопрос пока null, откроется при старте
+            setCurrentQuestion(data.questions[0])
         } catch (err) {
             console.log(err)
         }
@@ -39,7 +47,9 @@ const Questions = () => {
         getQuestionByID()
     }, [])
 
+    // Таймер
     useEffect(() => {
+        if (!started) return
         if (minute === 0 && seconds === 0) {
             finalTimer()
             return
@@ -55,7 +65,7 @@ const Questions = () => {
             })
         }, 1000)
         return () => clearInterval(timer)
-    }, [minute, seconds])
+    }, [minute, seconds, started])
 
     const addAnswer = (key, id) => {
         setAnswer(prev => ({ ...prev, [id]: key }))
@@ -143,7 +153,25 @@ const Questions = () => {
                 На главную
             </p>
 
-            {isFinal ? (
+            {!started ? (
+                questions && (
+                    <div className="flex flex-col items-center gap-6 mt-10">
+                        <div className="card w-full max-w-3xl bg-base-100 shadow-lg rounded-xl p-6">
+                            <h2 className="text-2xl font-bold mb-2">{questions.name}</h2>
+                            <p className="text-base-content/70 mb-2">{questions.description}</p>
+                            <p>🧪 Вопросов: {questions.questions.length}</p>
+                            <p>⭐ Макс. балл: {questions.maxScore}</p>
+                            <p>⏱ Время на тест: {minute} мин {seconds} сек</p>
+                            <button
+                                className="btn btn-primary mt-4"
+                                onClick={() => setStarted(true)}
+                            >
+                                Начать тест
+                            </button>
+                        </div>
+                    </div>
+                )
+            ) : isFinal ? (
                 <div className="flex flex-col items-center justify-center mt-40 gap-4">
                     <div className="badge badge-primary text-xl">
                         {score}/{questions.maxScore}
@@ -177,7 +205,6 @@ const Questions = () => {
                     <div className="gap-4 mt-4 join flex justify-center">
                         <button onClick={prevPage} className="join-item btn">«</button>
                         <button className="join-item btn">{page + 1}</button>
-
                         {questions && page + 1 >= questions.questions.length ? (
                             <button className="btn btn-primary" onClick={() => setModal(true)}>
                                 Завершить
@@ -185,11 +212,9 @@ const Questions = () => {
                         ) : (
                             <button onClick={nextPage} className="join-item btn">»</button>
                         )}
-
-
                     </div>
 
-                    {/* Модалка подтверждения завершения */}
+                    {/* Модалки */}
                     {openModal && (
                         <div className="modal modal-open">
                             <div className="modal-box max-w-md">
@@ -208,10 +233,8 @@ const Questions = () => {
                         </div>
                     )}
 
-                    {/* Модалка предупреждения */}
                     {warningQuest && <Warning setModal={setWarningQuest} text="Ответьте на все вопросы" />}
 
-                    {/* Модалка покинуть тест */}
                     {leaveModal && (
                         <div className="modal modal-open">
                             <div className="modal-box max-w-md">

@@ -23,7 +23,7 @@ const Question = ({ question, setAnswer, selected, id }) => {
                 onChange={() => setAnswer(variant.key, id)}
                 className="radio radio-primary"
               />
-              <span className="text-gray-800">{variant.text}</span>
+              <span className="neutral-content">{variant.text}</span>
             </label>
           ))}
         </form>
