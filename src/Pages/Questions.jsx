@@ -79,6 +79,7 @@ const Questions = () => {
             setCurrentQuestion(questions.questions[next])
         }
     }
+    
 
     const prevPage = () => {
         if (!questions?.questions) return
