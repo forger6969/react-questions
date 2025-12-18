@@ -9,6 +9,7 @@ import Warning from './Components/Warning'
 import { AppContext } from './AppContext'
 import TestsHistory from './Pages/TestsHistory'
 import Loader from './Components/Loader'
+import ProfilePage from './Pages/ProfilePage'
 
 
 const App = () => {
@@ -67,12 +68,12 @@ const App = () => {
         <div>
           <Account />
           <Routes>
-            <Route path='/' element={<Home />
-            } />
+            <Route path='/' element={<Home />} />
 
             <>
               <Route path='/Questions/:id' element={<Questions setWarning={setWarning} warning={isWarning} />} />
               <Route path='/HistoryTest' element={<TestsHistory />} />
+              <Route path='/profile' element={<ProfilePage />} />
             </>
 
 

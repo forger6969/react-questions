@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from '../AppContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AccountModal from './AccountModal'
 import loginSVG from '../assets/login-2-svgrepo-com.svg'
 import moon from '../assets/moon-svgrepo-com.svg'
@@ -13,6 +13,21 @@ const Account = () => {
     const { setTheme, isDark } = theme
 
     const [modal, setModal] = useState(false)
+
+    const navigate = useNavigate()
+
+    const checkAndOpenModal = () => {
+
+        const currentUser = JSON.parse(localStorage.getItem(`currentUser`))
+
+        if (currentUser) {
+            alert(`У вас уже есть аккаунт`)
+            navigate(`/profile`)
+        } else {
+            setModal(true)
+        }
+
+    }
 
     return (
         <div>
@@ -28,7 +43,7 @@ const Account = () => {
 
                 {/* Кнопка аккаунта */}
                 <button
-                    onClick={() => setModal(true)}
+                    onClick={checkAndOpenModal}
                     className={`btn btn-sm gap-2 ${isDark ? 'btn-outline' : 'btn-primary'}`}
                 >
                     <img className="w-5 h-5" src={loginSVG} alt="Логин" />
