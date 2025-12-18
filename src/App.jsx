@@ -8,7 +8,8 @@ import Warning from './Components/Warning'
 
 import { AppContext } from './AppContext'
 import TestsHistory from './Pages/TestsHistory'
-import Loader from './Components/loader'
+import Loader from './Components/Loader'
+
 
 const App = () => {
 
